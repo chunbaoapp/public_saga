@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: chunbao
+      MONGO_INITDB_ROOT_PASSWORD: chunbao
+    ports:
+      - 27017:27017
+
+  spring-boot-gui:
+    depends_on:
+      - mongodb_container
+    image: spring-boot-gui
+    restart: always
+    container_name: spring-boot-gui
+    hostname: spring-boot-gui
+    ports:
+      - 8080:8080
