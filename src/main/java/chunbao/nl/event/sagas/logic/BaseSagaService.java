@@ -3,7 +3,7 @@ package chunbao.nl.event.sagas.logic;
 import chunbao.nl.event.event.Event;
 import chunbao.nl.event.json.BaseJson;
 
-public class BaseSaga implements Saga {
+public class BaseSagaService implements SagaService {
 
   @Override
   public Event createSaga(BaseJson input) {
